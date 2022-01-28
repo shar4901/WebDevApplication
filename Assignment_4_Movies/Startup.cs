@@ -26,8 +26,6 @@ namespace Assignment_4_Movies
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddRazorPages();
-            services.AddServerSideBlazor();
 
             services.AddDbContext<StudentFormContext>(options =>
             {

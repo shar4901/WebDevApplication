@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebDevApplication.Migrations
 {
     [DbContext(typeof(StudentFormContext))]
-    [Migration("20220128003954_init")]
+    [Migration("20220128181029_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace WebDevApplication.Migrations
 
                     b.HasKey("student_id");
 
-                    b.ToTable("StudentModel");
+                    b.ToTable("student");
 
                     b.HasData(
                         new
@@ -73,7 +73,7 @@ namespace WebDevApplication.Migrations
                             last_name = "Harrison",
                             phone_number = "801-915-7986",
                             state = "UT",
-                            street_address = "1466 W 11150 S",
+                            street_address = "1466 11150 S",
                             zip = 84095
                         });
                 });

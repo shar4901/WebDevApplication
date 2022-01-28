@@ -1,5 +1,6 @@
 ﻿using Assignment_4_Movies.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,24 +12,28 @@ namespace Assignment_4_Movies.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private ILogger<HomeController> _logger;
 
         private StudentFormContext _blahContext { get; set; }
         //constructor
         public HomeController(ILogger<HomeController> logger, StudentFormContext someName)
         {
-            _logger = logger;
             _blahContext = someName;
         }
 
 
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var student = await _blahContext.student.ToListAsync();
+            return View(student);
         }
 
-
+        //edit controller
 
         [HttpGet]
         public IActionResult CreateStudent()

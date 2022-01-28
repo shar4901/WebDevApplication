@@ -24,6 +24,7 @@ namespace Assignment_4_Movies.Models
         [Required]
         public int zip { get; set; }
         [Required]
+        [Phone]
         public string phone_number { get; set; }
         [Required]
         [EmailAddress]

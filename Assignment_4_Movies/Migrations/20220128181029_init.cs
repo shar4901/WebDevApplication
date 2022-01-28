@@ -7,7 +7,7 @@ namespace WebDevApplication.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "StudentModel",
+                name: "student",
                 columns: table => new
                 {
                     student_id = table.Column<int>(nullable: false)
@@ -24,19 +24,19 @@ namespace WebDevApplication.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StudentModel", x => x.student_id);
+                    table.PrimaryKey("PK_student", x => x.student_id);
                 });
 
             migrationBuilder.InsertData(
-                table: "StudentModel",
+                table: "student",
                 columns: new[] { "student_id", "category", "city", "email", "first_name", "last_name", "phone_number", "state", "street_address", "zip" },
-                values: new object[] { 1, "full_time", "South Jordan", "test@test.com", "Spencer", "Harrison", "801-915-7986", "UT", "1466 W 11150 S", 84095 });
+                values: new object[] { 1, "full_time", "South Jordan", "test@test.com", "Spencer", "Harrison", "801-915-7986", "UT", "1466 11150 S", 84095 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "StudentModel");
+                name: "student");
         }
     }
 }
