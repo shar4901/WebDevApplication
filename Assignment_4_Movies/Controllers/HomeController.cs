@@ -13,9 +13,9 @@ namespace Assignment_4_Movies.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private MovieFormContext _blahContext { get; set; }
+        private StudentFormContext _blahContext { get; set; }
         //constructor
-        public HomeController(ILogger<HomeController> logger, MovieFormContext someName)
+        public HomeController(ILogger<HomeController> logger, StudentFormContext someName)
         {
             _logger = logger;
             _blahContext = someName;
@@ -28,18 +28,15 @@ namespace Assignment_4_Movies.Controllers
             return View();
         }
 
-        public IActionResult Podcasts()
-        {
-            return View();
-        }
+
 
         [HttpGet]
-        public IActionResult MovieCollection()
+        public IActionResult CreateStudent()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult MovieCollection(MovieModel ar)
+        public IActionResult CreateStudent(StudentModel ar)
         {
             if (ModelState.IsValid) {
                 _blahContext.Add(ar);

@@ -26,8 +26,10 @@ namespace Assignment_4_Movies
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
 
-            services.AddDbContext<MovieFormContext>(options =>
+            services.AddDbContext<StudentFormContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:BlahConnection"]);
             });
