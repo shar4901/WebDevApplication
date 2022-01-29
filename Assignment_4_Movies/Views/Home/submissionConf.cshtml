@@ -1,12 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@{
+    ViewData["Title"] = "Submission Confirmation";
+}
 @{
 }
 
 @model Assignment_4_Movies.Models.StudentModel;
 
-    <div>
-        <h1>We Recieved the Submission for @Model.first_name @Model.last_name</h1>
-        <p>Thank you for your submission! Check out our home page to see your record!</p>
-    </div>
+<div class="row">
+    <h1>We Recieved the Submission for @Model.first_name @Model.last_name</h1>
+    <p>Thank you for your submission! Check out our home page to see your record!</p>
+</div>
+
+<div class="row">
+    <ul>
+        <li>
+            Name: @Model.first_name @Model.last_name
+        </li>
+        <li>
+            Category: @Model.category
+        </li>
+        <li>
+            Email: @Model.email
+        </li>
+        <li>
+            Phone: @Model.phone_number
+        </li>
+        <li>
+            Address: @Model.street_address
+        </li>
+        <li>
+            City: @Model.city
+        </li>
+        <li>
+            State: @Model.state
+        </li>
+        <li>
+            Zip: @Model.zip
+        </li>
+    </ul>
+
+</div>
+<br />
+<div class="row">
+    <a asp-action="Index" asp-controller="Home" class="btn btn-success" style="background-color:cornflowerblue">
+        Home
+    </a>
+</div>
+
